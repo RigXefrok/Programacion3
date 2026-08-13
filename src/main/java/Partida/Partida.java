@@ -24,7 +24,7 @@ public abstract class Partida implements IPartida {
     protected int seleccionarPersonajes() {
         selectorPersonaje = new Menu();
         controladorPersonaje.personajes().forEach(personaje -> {
-            selectorPersonaje.agregar(personaje.nombre());
+            selectorPersonaje.agregar(personaje.nombreCompleto());
         });
         int opcion = selectorPersonaje.selector();
         if (opcion == 0) {

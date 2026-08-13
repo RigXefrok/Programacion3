@@ -24,7 +24,7 @@ public class Personaje {
         return esElElegido;
     }
 
-    public String nombre() {
+    public String nombreCompleto() {
         return "%s %s".formatted(nombre, apellido);
     }
 

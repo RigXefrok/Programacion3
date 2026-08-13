@@ -34,7 +34,7 @@ public class PartidaJugador extends Partida {
 
     protected void pierdeVida() {
         super.pierdeVida();
-        System.out.println("UYYY te equivocaste "+ personajeElegido.nombre() + " no es el elegido.");
+        System.out.println("UYYY te equivocaste "+ personajeElegido.nombreCompleto() + " no es el elegido.");
         System.out.println("Te quedan " + VIDAS + " vidas" );
         controladorPersonaje.eleminarPersonaje(personajeElegido);
     };

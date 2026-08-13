@@ -35,7 +35,7 @@ public class PartidaMaquina extends Partida {
 
     protected void pierdeVida() {
         super.pierdeVida();
-        System.out.println("Vamoooos la maquina no te encontro, eligio a [" + personajeElegido.nombre() + "]");
+        System.out.println("Vamoooos la maquina no te encontro, eligio a [" + personajeElegido.nombreCompleto() + "]");
         System.out.println("Tenes que aguantar " + VIDAS + " mas" );
         controladorPersonaje.eleminarPersonaje(personajeElegido);
     };
