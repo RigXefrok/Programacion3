@@ -1,12 +1,13 @@
 package org.example;
 
-import Viaje.GestorViajes;
+import Partida.Partida;
+import Terminal.Terminal;
 
 public class Main {
     static void main() {
-        GestorViajes gestorViajes = new GestorViajes();
+        Partida partida = new Partida();
         Terminal.saludar();
-        Terminal.generarMenu(gestorViajes);
+        partida.iniciar();
     }
 }
 
