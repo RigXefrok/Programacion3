@@ -64,6 +64,10 @@ public class ControladorPersonaje {
         return personajeElegido;
     }
 
+    public Personaje obtener() {
+        return obtener(random.nextInt(personajes.size()));
+    }
+
     public Personaje obtener(int id) {
         if (id < 0 || id > personajes.size()) {
             throw new Error("No hay personaje elegido");
@@ -92,5 +96,9 @@ public class ControladorPersonaje {
 
     public List<Personaje> personajes() {
         return personajes;
+    }
+
+    public int cantidadPersonajes() {
+        return personajes.size();
     }
 }

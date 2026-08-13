@@ -5,8 +5,9 @@ import java.util.function.Function;
 
 public abstract class Terminal {
     static Scanner scanner = new Scanner(System.in);
+    static String nombre;
     public static void saludar() {
-        String nombre = leer("Bienvenido a Adivina quien\nDime tu nombre");
+        nombre = leer("Bienvenido a Adivina quien\nDime tu nombre");
         System.out.println("Bienvenido " + nombre);
     }
 
@@ -46,6 +47,7 @@ public abstract class Terminal {
     }
 
     public static void salir() {
+        System.out.println("Adios " + nombre + ", volve a jugar despues");
         scanner.close();
     }
 }
