@@ -40,14 +40,15 @@ public class PartidaMaquina extends Partida {
         controladorPersonaje.eleminarPersonaje(personajeElegido);
     };
 
-    private void mostrarAyuda() {
-        Menu menuAyuda = new Menu();
-        menuAyuda.agregar("No puedo mas ayudame!!!");
-        menuAyuda.agregar("Me la banco solo, GRACIAS");
-        int opcionAyuda = menuAyuda.selector();
-        if (opcionAyuda == 1) {
-            int indiceDelElegido = controladorPersonaje.obtenerIndiceElegido();
-            System.out.println("El elegido esta entre el indice: " + Math.max(indiceDelElegido - 2, 1) + "~" + Math.min(indiceDelElegido + 2, controladorPersonaje.personajes().size()));
+    protected void terminarPartida() {
+        if (salioDelJuego) {
+            System.out.println(mensajeJuegoInterrumpido);
+            return;
         }
+        if (VIDAS > 0) {
+            System.out.println(mensajeVictoria);
+            return;
+        }
+        System.out.println(mensajeDerrota);
     }
 }

@@ -32,6 +32,10 @@ public class ControladorPersonaje {
         }
     }
 
+    public void crearPersonajes(List<Personaje> personajes) {
+        this.personajes = personajes;
+    }
+
     public void eleminarPersonaje(Personaje personaje) {
         personajes.remove(personaje);
     }

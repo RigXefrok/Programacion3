@@ -50,4 +50,16 @@ public class PartidaJugador extends Partida {
         }
     }
 
+    protected void terminarPartida() {
+        if (salioDelJuego) {
+            System.out.println(mensajeJuegoInterrumpido);
+            return;
+        }
+        if (VIDAS > 0) {
+            System.out.println(mensajeVictoria);
+            return;
+        }
+        System.out.println(mensajeDerrota);
+    }
+
 }

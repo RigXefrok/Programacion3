@@ -46,6 +46,10 @@ public abstract class Terminal {
         return leer(value -> true);
     }
 
+    public static void escribir(String mensaje) {
+        System.out.println(mensaje);
+    }
+
     public static void salir() {
         System.out.println("Adios " + nombre + ", volve a jugar despues");
         scanner.close();
