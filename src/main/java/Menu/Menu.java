@@ -1,6 +1,6 @@
 package Menu;
 
-import org.example.Terminal;
+import Terminal.Terminal;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -22,7 +22,7 @@ public class Menu {
     }
 
     public short selector() {
-        short opcion = 0;
+        short opcion;
         opciones.forEach(System.out::println);
         opcion = seleccionar();
         return opcion;

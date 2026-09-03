@@ -1,16 +1,13 @@
-package org.example;
-
-import Menu.Menu;
-import Viaje.GestorViajes;
-import Menu.ControladorMenu;
+package Terminal;
 
 import java.util.Scanner;
 import java.util.function.Function;
 
 public abstract class Terminal {
     static Scanner scanner = new Scanner(System.in);
-    static void saludar() {
-        String nombre = leer("Como te llamas?");
+    static String nombre;
+    public static void saludar() {
+        nombre = leer("Bienvenido a Adivina quien\nDime tu nombre");
         System.out.println("Bienvenido " + nombre);
     }
 
@@ -44,19 +41,17 @@ public abstract class Terminal {
         return leer(value -> value.matches(regex));
     }
 
-    static String leer(String mensaje) {
+    public static String leer(String mensaje) {
         System.out.println(mensaje);
         return leer(value -> true);
     }
 
-    static void generarMenu(GestorViajes gestorViajes) {
-        Menu menu = new Menu();
-        ControladorMenu gestorHandler = new ControladorMenu(gestorViajes);
-        menu.agregar("Agregar un viaje", gestorHandler::agregarViaje);
-        menu.agregar("Ver viajes", gestorHandler::verViajes);
-        menu.agregar("Eliminar un viaje", gestorHandler::eliminarViaje);
-        menu.agregar("Guardar viajes", gestorHandler::guardarViajes);
-        menu.mostrar();
+    public static void escribir(String mensaje) {
+        System.out.println(mensaje);
+    }
+
+    public static void salir() {
+        System.out.println("Adios " + nombre + ", volve a jugar despues");
         scanner.close();
     }
 }
